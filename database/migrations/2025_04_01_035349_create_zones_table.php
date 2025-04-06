@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_zone');
             $table->string('name', 40);
             $table->string('location', 40);
-            $table->integer('capacity', 12);
+            $table->integer('capacity');
             $table->string('type',40);
             $table->string('weather',40);
             $table->timestamps();

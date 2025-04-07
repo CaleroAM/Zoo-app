@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('fk_employee');
 
             $table->foreign('fk_shift')->references('id_shift')->on('shifts')->onDelete('cascade');
-            $table->foreign('fk_employee')->references('id_employee')->on('employees')->onDelete('casacade');
+            $table->foreign('fk_employee')->references('id_employee')->on('employees')->onDelete('cascade');
         });
     }
 

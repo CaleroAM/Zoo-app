@@ -22,7 +22,7 @@ class FoodRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'id_food' => 'required',
+			/*'id_food' => 'required',*/
 			'name' => 'required|string',
 			'content' => 'required|string',
 			'total_amount' => 'required',

@@ -63,9 +63,9 @@
 										<td >{{ $date->state }}</td>
 
                                             <td>
-                                                <form action="{{ route('dates.destroy', $date->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('dates.show', $date->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('dates.edit', $date->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('dates.destroy', $date->id_date) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('dates.show', $date->id_date) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('dates.edit', $date->id_date) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -78,7 +78,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $dates->withQueryString()->links() !!}
             </div>
         </div>
     </div>

@@ -67,9 +67,9 @@
 										<td >{{ $animal->fk_zone }}</td>
 
                                             <td>
-                                                <form action="{{ route('animals.destroy', $animal->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('animals.show', $animal->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('animals.edit', $animal->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('animals.destroy', $animal->id_animal) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('animals.show', $animal->id_animal) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('animals.edit', $animal->id_animal) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>

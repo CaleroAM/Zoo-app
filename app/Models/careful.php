@@ -4,8 +4,29 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Careful
+ *
+ * @property $id_careful
+ * @property $date_start
+ * @property $hour
+ * @property $treatment
+ * @property $amount_food
+ * @property $created_at
+ * @property $updated_at
+ * @property $fk_food
+ * @property $fk_employee
+ * @property $fk_animal
+ *
+ * @property Animal $animal
+ * @property Employee $employee
+ * @property Food $food
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
 class Careful extends Model
 {
+    
     protected $perPage = 20;
 
     /**
@@ -13,23 +34,35 @@ class Careful extends Model
      *
      * @var array<int, string>
      */
-
-
     protected $table = 'carefuls';
     protected $primaryKey = 'id_careful'; 
-    public $incrementing = false;
+    public $incrementing = true;
     protected $keyType = 'int';
-    protected $fillable =['date_start', 'hour', 'treatment', 'amount_food'];
+    protected $fillable = ['date_start', 'hour', 'treatment', 'amount_food', 'fk_food', 'fk_employee', 'fk_animal'];
 
-    public function food(){
-        return $this->belongsTo(food::class, 'fk_food', 'id_food');
-    }
 
-    public function employee(){
-        return $this->belongsTo(employee::class, 'fk_employee', 'id_employee');
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function animal()
+    {
+        return $this->belongsTo(\App\Models\Animal::class, 'fk_animal', 'id_animal');
     }
-
-    public function animal(){
-        return $this->belongsTo(animal::class, 'fk_animal', 'id_animal');
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function employee()
+    {
+        return $this->belongsTo(\App\Models\Employee::class, 'fk_employee', 'id_employee');
     }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function food()
+    {
+        return $this->belongsTo(\App\Models\Food::class, 'fk_food', 'id_food');
+    }
+    
 }

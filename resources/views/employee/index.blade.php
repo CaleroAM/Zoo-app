@@ -67,9 +67,9 @@
 										<td >{{ $employee->fk_shift }}</td>
 
                                             <td>
-                                                <form action="{{ route('employees.destroy', $employee->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('employees.show', $employee->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('employees.edit', $employee->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('employees.destroy', $employee->id_employee) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('employees.show', $employee->id_employee) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('employees.edit', $employee->id_employee) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -82,7 +82,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $employees->withQueryString()->links() !!}
             </div>
         </div>
     </div>

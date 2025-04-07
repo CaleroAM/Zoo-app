@@ -6,6 +6,7 @@ use App\Models\Date;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\DateRequest;
+use App\Models\Employee;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -28,8 +29,8 @@ class DateController extends Controller
     public function create(): View
     {
         $date = new Date();
-
-        return view('date.create', compact('date'));
+        $employee = Employee::all(); 
+        return view('date.create', compact('date', 'employee'));
     }
 
     /**
@@ -59,8 +60,8 @@ class DateController extends Controller
     public function edit($id): View
     {
         $date = Date::find($id);
-
-        return view('date.edit', compact('date'));
+        $employee = Employee::all();
+        return view('date.edit', compact('date', 'employee'));
     }
 
     /**

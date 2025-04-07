@@ -6,6 +6,9 @@ use App\Models\Careful;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\CarefulRequest;
+use App\Models\Animal;
+use App\Models\Employee;
+use App\Models\Food;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -28,8 +31,11 @@ class CarefulController extends Controller
     public function create(): View
     {
         $careful = new Careful();
-
-        return view('careful.create', compact('careful'));
+        $food = Food::all();
+        $employee = Employee::all();
+        $animal = Animal::all();
+        
+        return view('careful.create', compact('careful', 'food', 'employee', 'animal'));
     }
 
     /**
@@ -59,8 +65,10 @@ class CarefulController extends Controller
     public function edit($id): View
     {
         $careful = Careful::find($id);
-
-        return view('careful.edit', compact('careful'));
+        $food = Food::all();
+        $employee = Employee::all();
+        $animal = Animal::all();
+        return view('careful.edit', compact('careful', 'food', 'employee', 'animal'));
     }
 
     /**

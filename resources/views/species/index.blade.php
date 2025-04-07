@@ -70,7 +70,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $species->withQueryString()->links() !!}
             </div>
         </div>
     </div>

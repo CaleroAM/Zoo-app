@@ -57,9 +57,9 @@
 										<td >{{ $lot->fk_food }}</td>
 
                                             <td>
-                                                <form action="{{ route('lots.destroy', $lot->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('lots.show', $lot->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('lots.edit', $lot->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('lots.destroy', $lot->id_lot) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('lots.show', $lot->id_lot) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('lots.edit', $lot->id_lot) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -72,7 +72,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $lots->withQueryString()->links() !!}
             </div>
         </div>
     </div>

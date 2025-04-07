@@ -22,7 +22,7 @@ class SpeciesRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'id_species' => 'required',
+			/*'id_species' => 'required',*/
 			'name_scientific' => 'required|string',
 			'name_common' => 'required|string',
 			'family' => 'required|string',

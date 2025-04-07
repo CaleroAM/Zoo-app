@@ -74,7 +74,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $food->withQueryString()->links() !!}
             </div>
         </div>
     </div>

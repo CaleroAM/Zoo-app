@@ -31,7 +31,7 @@ class Food extends Model
      *
      * @var array<int, string>
      */
-    protected $table = 'foods';
+    protected $table = 'food';
     protected $primaryKey = 'id_food';
     public $incrementing = true;
     protected $keyType = 'int';

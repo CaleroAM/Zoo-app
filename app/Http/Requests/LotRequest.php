@@ -22,6 +22,10 @@ class LotRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'date_cad'=>'required|string',
+            'portion'=>'required|string',
+            'date_start' => 'required',
+            'fk_food'=>'required'
         ];
     }
 }

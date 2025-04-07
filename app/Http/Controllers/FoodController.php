@@ -28,7 +28,7 @@ class FoodController extends Controller
     public function create(): View
     {
         $food = new Food();
-
+        
         return view('food.create', compact('food'));
     }
 

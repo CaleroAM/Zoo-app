@@ -6,6 +6,7 @@ use App\Models\Employee;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmployeeRequest;
+use App\Models\Shift;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -28,8 +29,8 @@ class EmployeeController extends Controller
     public function create(): View
     {
         $employee = new Employee();
-
-        return view('employee.create', compact('employee'));
+        $shifts = Shift::all();
+        return view('employee.create', compact('employee','shifts'));
     }
 
     /**
@@ -59,8 +60,8 @@ class EmployeeController extends Controller
     public function edit($id): View
     {
         $employee = Employee::find($id);
-
-        return view('employee.edit', compact('employee'));
+        $shifts = Shift::all();
+        return view('employee.edit', compact('employee', 'shifts'));
     }
 
     /**

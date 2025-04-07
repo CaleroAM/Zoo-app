@@ -6,6 +6,8 @@ use App\Models\Animal;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\AnimalRequest;
+use App\Models\Species;
+use App\Models\Zone;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -28,8 +30,9 @@ class AnimalController extends Controller
     public function create(): View
     {
         $animal = new Animal();
-
-        return view('animal.create', compact('animal'));
+        $species = Species::all();
+        $zones =Zone::all();
+        return view('animal.create', compact('animal','species', 'zones'));
     }
 
     /**
@@ -59,8 +62,9 @@ class AnimalController extends Controller
     public function edit($id): View
     {
         $animal = Animal::find($id);
-
-        return view('animal.edit', compact('animal'));
+        $species = Species::all();
+        $zones = Zone::all();
+        return view('animal.edit', compact('animal','species', 'zones'));
     }
 
     /**

@@ -70,7 +70,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $shifts->withQueryString()->links() !!}
             </div>
         </div>
     </div>

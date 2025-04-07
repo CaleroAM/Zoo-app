@@ -6,6 +6,8 @@ use App\Models\Empshift;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpshiftRequest;
+use App\Models\Employee;
+use App\Models\Shift;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -28,8 +30,9 @@ class EmpshiftController extends Controller
     public function create(): View
     {
         $empshift = new Empshift();
-
-        return view('empshift.create', compact('empshift'));
+        $employee =Employee::all();
+        $shift = Shift::all();
+        return view('empshift.create', compact('empshift','employee', 'shift'));
     }
 
     /**
@@ -59,8 +62,10 @@ class EmpshiftController extends Controller
     public function edit($id): View
     {
         $empshift = Empshift::find($id);
+        $employee = Employee::all();
+        $shift = Shift::all();
 
-        return view('empshift.edit', compact('empshift'));
+        return view('empshift.edit', compact('empshift', 'employee', 'shift'));
     }
 
     /**

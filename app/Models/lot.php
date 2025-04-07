@@ -26,8 +26,8 @@ class Lot extends Model
      */
     protected $table = 'lots';
     protected $primaryKey = 'id_lot';
-    public $incrementing = false;
-    protected $fillable = ['date_cade', 'portion', 'date_start'];
+    public $incrementing = true;
+    protected $fillable = ['date_cad', 'portion', 'date_start','fk_food'];
 
     public function food()
     {

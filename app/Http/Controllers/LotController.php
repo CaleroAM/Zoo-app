@@ -6,6 +6,7 @@ use App\Models\Lot;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\LotRequest;
+use App\Models\Food;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -28,8 +29,8 @@ class LotController extends Controller
     public function create(): View
     {
         $lot = new Lot();
-
-        return view('lot.create', compact('lot'));
+        $food = Food::all();
+        return view('lot.create', compact('lot', 'food'));
     }
 
     /**
@@ -59,8 +60,8 @@ class LotController extends Controller
     public function edit($id): View
     {
         $lot = Lot::find($id);
-
-        return view('lot.edit', compact('lot'));
+        $food = Food::all();
+        return view('lot.edit', compact('lot', 'food'));
     }
 
     /**

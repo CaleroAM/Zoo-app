@@ -1,11 +1,12 @@
 <div class="row padding-1 p-1">
     <div class="col-md-12">
-        
+        <!--
         <div class="form-group mb-2 mb20">
             <label for="id_animal" class="form-label">{{ __('Id Animal') }}</label>
             <input type="text" name="id_animal" class="form-control @error('id_animal') is-invalid @enderror" value="{{ old('id_animal', $animal?->id_animal) }}" id="id_animal" placeholder="Id Animal">
             {!! $errors->first('id_animal', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
+        -->    
         <div class="form-group mb-2 mb20">
             <label for="name" class="form-label">{{ __('Name') }}</label>
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $animal?->name) }}" id="name" placeholder="Name">

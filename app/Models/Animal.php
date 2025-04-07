@@ -24,7 +24,19 @@ class Animal extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [];
 
+    protected $table = 'animals';
+    protected $primaryKey = 'id_animal';
+    public $incrementing = false;
+    protected $keyType = 'int';
+    protected $fillable = ['name','age','weigh','height','sex','fecha_nac','descripcion'];
+
+    public function species(){
+        return $this->belongsTo(species::class, 'fk_species', 'id_species');
+    }
+
+    public function zone(){
+        return $this->belongsTo(zone::class, 'fk_zone', 'id_zone');
+    }
 
 }

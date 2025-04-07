@@ -12,8 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('lots', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_lot');
+            $table->string('date_cad',10);
+            $table->string('portion',10);
+            $table->string('date_start',10);
             $table->timestamps();
+
+            $table->unsignedBigInteger('fk_food');
+
+            $table->foreign('fk_food')->references('id_food')->on('food')->onDelete('cascade');
         });
     }
 

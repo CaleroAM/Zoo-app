@@ -36,6 +36,16 @@
                                     <tr>
                                         <th>No</th>
                                         
+									<th >Id Animal</th>
+									<th >Name</th>
+									<th >Age</th>
+									<th >Weigh</th>
+									<th >Height</th>
+									<th >Sex</th>
+									<th >Fecha Nac</th>
+									<th >Descripcion</th>
+									<th >Fk Specie</th>
+									<th >Fk Zone</th>
 
                                         <th></th>
                                     </tr>
@@ -45,6 +55,16 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+										<td >{{ $animal->id_animal }}</td>
+										<td >{{ $animal->name }}</td>
+										<td >{{ $animal->age }}</td>
+										<td >{{ $animal->weigh }}</td>
+										<td >{{ $animal->height }}</td>
+										<td >{{ $animal->sex }}</td>
+										<td >{{ $animal->fecha_nac }}</td>
+										<td >{{ $animal->descripcion }}</td>
+										<td >{{ $animal->fk_specie }}</td>
+										<td >{{ $animal->fk_zone }}</td>
 
                                             <td>
                                                 <form action="{{ route('animals.destroy', $animal->id) }}" method="POST">

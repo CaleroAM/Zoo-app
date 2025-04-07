@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('food', function (Blueprint $table) {
             $table->id('id_food');
-            $table->string('name');
-            $table->string('content');
+            $table->string('name',40);
+            $table->string('content',40);
             $table->integer('total_amount');
             $table->integer('cost');
             $table->timestamps();
 
-            $table->unsignedBigInteger('fk_supplier');
+            $table->string('fk_supplier',20);
 
             $table->foreign('fk_supplier')->references('rfc')->on('suppliers')->onDelete('cascade');
         });

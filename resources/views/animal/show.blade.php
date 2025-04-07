@@ -20,6 +20,46 @@
 
                     <div class="card-body bg-white">
                         
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Id Animal:</strong>
+                                    {{ $animal->id_animal }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Name:</strong>
+                                    {{ $animal->name }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Age:</strong>
+                                    {{ $animal->age }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Weigh:</strong>
+                                    {{ $animal->weigh }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Height:</strong>
+                                    {{ $animal->height }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Sex:</strong>
+                                    {{ $animal->sex }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Fecha Nac:</strong>
+                                    {{ $animal->fecha_nac }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Descripcion:</strong>
+                                    {{ $animal->descripcion }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Fk Specie:</strong>
+                                    {{ $animal->fk_specie }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Fk Zone:</strong>
+                                    {{ $animal->fk_zone }}
+                                </div>
 
                     </div>
                 </div>

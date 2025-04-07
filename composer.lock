@@ -5974,16 +5974,16 @@
         },
         {
             "name": "ibex/crud-generator",
-            "version": "v2.1.4",
+            "version": "v2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/awais-vteams/laravel-crud-generator.git",
-                "reference": "2e35e77a84cacd0f61c52a9e070a7fdc874f404f"
+                "reference": "e40fd30f1136e5c9564256253dc8a4db46b1d3ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awais-vteams/laravel-crud-generator/zipball/2e35e77a84cacd0f61c52a9e070a7fdc874f404f",
-                "reference": "2e35e77a84cacd0f61c52a9e070a7fdc874f404f",
+                "url": "https://api.github.com/repos/awais-vteams/laravel-crud-generator/zipball/e40fd30f1136e5c9564256253dc8a4db46b1d3ba",
+                "reference": "e40fd30f1136e5c9564256253dc8a4db46b1d3ba",
                 "shasum": ""
             },
             "require": {
@@ -6027,7 +6027,7 @@
             ],
             "support": {
                 "issues": "https://github.com/awais-vteams/laravel-crud-generator/issues",
-                "source": "https://github.com/awais-vteams/laravel-crud-generator/tree/v2.1.4"
+                "source": "https://github.com/awais-vteams/laravel-crud-generator/tree/v2.1.5"
             },
             "funding": [
                 {
@@ -6039,7 +6039,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2025-03-23T06:44:38+00:00"
+            "time": "2025-04-04T02:58:08+00:00"
         },
         {
             "name": "laravel/pail",

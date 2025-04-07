@@ -36,6 +36,16 @@
                                     <tr>
                                         <th>No</th>
                                         
+									<th >Id Animal</th>
+									<th >Name</th>
+									<th >Age</th>
+									<th >Weigh</th>
+									<th >Height</th>
+									<th >Sex</th>
+									<th >Fecha Nac</th>
+									<th >Descripcion</th>
+									<th >Fk Specie</th>
+									<th >Fk Zone</th>
 
                                         <th></th>
                                     </tr>
@@ -45,11 +55,21 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+										<td >{{ $animal->id_animal }}</td>
+										<td >{{ $animal->name }}</td>
+										<td >{{ $animal->age }}</td>
+										<td >{{ $animal->weigh }}</td>
+										<td >{{ $animal->height }}</td>
+										<td >{{ $animal->sex }}</td>
+										<td >{{ $animal->fecha_nac }}</td>
+										<td >{{ $animal->descripcion }}</td>
+										<td >{{ $animal->fk_specie }}</td>
+										<td >{{ $animal->fk_zone }}</td>
 
                                             <td>
-                                                <form action="{{ route('animals.destroy', $animal->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('animals.show', $animal->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('animals.edit', $animal->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('animals.destroy', $animal->id_animal) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('animals.show', $animal->id_animal) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('animals.edit', $animal->id_animal) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>

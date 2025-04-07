@@ -4,8 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class shift extends Model
+/**
+ * Class Shift
+ *
+ * @property $id_shift
+ * @property $description
+ * @property $hour_s
+ * @property $hour_e
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @property Employee[] $employees
+ * @property Empshift[] $empshifts
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
+class Shift extends Model
 {
+    
     protected $perPage = 20;
 
     /**
@@ -13,10 +29,27 @@ class shift extends Model
      *
      * @var array<int, string>
      */
+    protected $table = 'shifts';
+    protected $primaryKey = 'id_shift';
+    public $incrementing = true;
+    protected $keyType = 'int';
+    protected $fillable = ['description', 'hour_s', 'hour_e'];
 
-     protected $table = 'shifts';
-     protected $primaryKey = 'cod_shift';
-     public $incrementing = false;
-     protected $keyType = 'string';
-     protected $fillable = ['description', 'hour_s', 'hour_e'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function employees()
+    {
+        return $this->hasMany(Employee::class, 'id_shift', 'fk_shift');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function empshifts()
+    {
+        return $this->hasMany(Empshift::class, 'id_shift', 'fk_shift');
+    }
+    
 }

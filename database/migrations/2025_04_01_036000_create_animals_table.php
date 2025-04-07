@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             /*$table->tipo('name', cantidad) ->prymary() o nullable(); */
-            $table->id('id_animal', 6)->primary();
-            $table->string('name', 50);
+            $table->id('id_animal');
+            $table->string('name', 40);
             $table->string('age', 4);
             $table->string('weigh', 4);
             $table->string('height', 3);
@@ -22,12 +22,17 @@ return new class extends Migration
             $table->string('fecha_nac', 10);
             $table->string('descripcion', 100);
             $table->timestamps();
+            
+            //Claves foráneas
+            $table->unsignedBigInteger('fk_specie');
+            $table->unsignedBigInteger('fk_zone');
+            
+            //Relacione
+            $table->foreign('fk_specie')->references('id_specie')->on('species')->onDelete('cascade');
+            $table->foreign('fk_zone')->references('id_zone')->on('zones')->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('animals');

@@ -22,6 +22,17 @@ class AnimalRequest extends FormRequest
     public function rules(): array
     {
         return [
+			/*'id_animal' => 'required',*/
+			'name' => 'required|string',
+			'age' => 'required|string',
+			'weigh' => 'required|string',
+			'height' => 'required|string',
+			'sex' => 'required|string',
+			'fecha_nac' => 'required|string',
+			'descripcion' => 'required|string',
+            'fk_specie' => 'required|exists:species,id_specie',
+            'fk_zone' => 'required|exists:zones,id_zone'
+
         ];
     }
 }

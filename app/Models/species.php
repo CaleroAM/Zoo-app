@@ -4,20 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class species extends Model
+class Species extends Model
 {
-    protected $perPage = 20;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+ 
 
      protected $table = 'species';
-     protected $primaryKey = 'id_species';
-     public $incrementing = false;
-     protected $keyType = 'string';
+     protected $primaryKey = 'id_specie';
+     public $incrementing = true;
+     protected $keyType = 'int';
      protected $fillable = ['name_scientific','name_common','family'];
- 
+    
+
+     public function animals(){
+          return $this->hasMany(Animal::class, 'id_specie', 'fk_specie');
+     }
 }
+
